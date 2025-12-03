@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Branches</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-light: #eef2ff;
+      --bg: #f7f9fc;
+      --text-dark: #1e1e1e;
+      --text-light: #6b7280;
+      --card-bg: #ffffff;
+      --radius: 18px;
+      --shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      padding: 20px;
+      color: var(--text-dark);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 20px;     
+      font-weight: 700;
+      
+      background: linear-gradient(to right, #4338ca, #6366f1);    
+      -webkit-background-clip: text; 
+      color: transparent;
+    }
+
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-bg);
+      padding: 22px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+    }
+
+    .location-tag {
+      display: inline-block;
+      padding: 5px 12px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border-radius: 10px;
+      font-size: 0.75rem;
+      margin-bottom: 10px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+    }
+
+    .summary {
+      margin-top: 5px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .details {
+      display: none;
+      margin-top: 15px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .toggle-btn {
+      margin-top: 12px;
+      background: none;
+      border: none;
+      color: var(--primary);
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 0.95rem;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Our School Branches</h1>
+
+    <div class="branch-grid" id="branchesList">
+
+      <!-- Tiruppur -->
+      <div class="card" data-city="tiruppur">
+        <div class="location-tag">Tiruppur</div>
+        <div class="card-title">Tiruppur Branch</div>
+        <div class="summary">Stateboard • Nursery to Grade 12</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Avinashi Road, Tiruppur 641601</p>
+          <p><strong>Contact:</strong> +91 95000 11111</p>
+          <p><strong>Facilities:</strong> Smart classrooms, Library, Labs, Transport</p>
+        </div>
+      </div>
+
+      <!-- Coimbatore -->
+      <div class="card" data-city="coimbatore">
+        <div class="location-tag">Coimbatore</div>
+        <div class="card-title">Coimbatore Branch</div>
+        <div class="summary">CBSE • Nursery to Grade 12</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Sathy Road, Coimbatore 641014</p>
+          <p><strong>Contact:</strong> +91 95000 22222</p>
+          <p><strong>Facilities:</strong> STEM Lab, Playground, Computer Lab</p>
+        </div>
+      </div>
+
+      <!-- Pollachi -->
+      <div class="card" data-city="pollachi">
+        <div class="location-tag">Pollachi</div>
+        <div class="card-title">Pollachi Branch</div>
+        <div class="summary">Stateboard • Nursery to Grade 10</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Gandhi Road, Pollachi 642002</p>
+          <p><strong>Contact:</strong> +91 95000 33333</p>
+          <p><strong>Facilities:</strong> Arts Center, Labs, Transport</p>
+        </div>
+      </div>
+
+      <!-- Erode -->
+      <div class="card" data-city="erode">
+        <div class="location-tag">Erode</div>
+        <div class="card-title">Erode Branch</div>
+        <div class="summary">Matric • Nursery to Grade 12</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Bhavani Road, Erode 638001</p>
+          <p><strong>Contact:</strong> +91 95000 44444</p>
+          <p><strong>Facilities:</strong> Auditorium, STEM Lab, Cafeteria</p>
+        </div>
+      </div>
+
+      <!-- Trichy -->
+      <div class="card" data-city="trichy">
+        <div class="location-tag">Trichy</div>
+        <div class="card-title">Trichy Branch</div>
+        <div class="summary">CBSE • Nursery to Grade 12</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Rockfort Area, Trichy 620001</p>
+          <p><strong>Contact:</strong> +91 95000 55555</p>
+          <p><strong>Facilities:</strong> Digital classrooms, Labs, Sports ground</p>
+        </div>
+      </div>
+
+      <!-- Bangalore -->
+      <div class="card" data-city="bangalore">
+        <div class="location-tag">Bangalore</div>
+        <div class="card-title">Bangalore Branch</div>
+        <div class="summary">ICSE • Nursery to Grade 12</div>
+        <button class="toggle-btn">Show Details ▾</button>
+        <div class="details">
+          <p><strong>Address:</strong> Whitefield, Bangalore 560066</p>
+          <p><strong>Contact:</strong> +91 95000 66666</p>
+          <p><strong>Facilities:</strong> Robotics Lab, Library, Smart Campus</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll('.toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const details = btn.nextElementSibling;
+        const open = details.style.display === 'block';
+
+        document.querySelectorAll('.details').forEach(d => d.style.display = 'none');
+        document.querySelectorAll('.toggle-btn').forEach(b => b.textContent = 'Show Details ▾');
+
+        if (!open) {
+          details.style.display = 'block';
+          btn.textContent = 'Hide Details ▴';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
